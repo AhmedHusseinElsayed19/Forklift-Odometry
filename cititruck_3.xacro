@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<robot name="cititruck" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
+  <xacro:include filename="$(find cititruck_description)/urdf/cititruck.gazebo" />
+  <!-- Import Rviz colors -->
+  <xacro:include filename="$(find cititruck_description)/urdf/materials.xacro" />
+
+
+  <!-- base_footprint is a fictitious link(frame) that is on the ground right below base_link origin, navigation stack dedpends on this frame and KDL needs a root link without any intertia -->
+    <link name="base_footprint">
+    </link>
+	
+<!-- 	
+    <link name="odom">
+    </link>
+	
+	
+    <joint name="odom_joint" type="fixed">
+      <origin xyz="0 0 0.050" rpy="0 0 0" />
+      <child link="base_footprint" />
+      <parent link="odom"/>
+    </joint>
+    -->
+    
+    <joint name="base_footprint_joint" type="fixed">
+      <origin xyz="0 0 0.050" rpy="0 0 0" />
+      <child link="base_link" />
+      <parent link="base_footprint"/>
+    </joint>
+    
+
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <inertial>
+      <mass value="20"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+      <origin/>
+    </inertial>
+    <visual>
+      <origin xyz="0.8 0 0" rpy="0 0 0" />
+      <geometry>
+        <!-- box size="0.4 0.55 0.75" /-->
+        <mesh filename="package://cititruck_description/meshes/ETV216.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <!-- material name="red"/-->
+    </visual>
+    
+    <collision>
+      <origin xyz="0.8 0 0.1" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.55 0.005" />
+      </geometry>
+    </collision>
+  </link>
+  
+
+      
+
+</robot>
