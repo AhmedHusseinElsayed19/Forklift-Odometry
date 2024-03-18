@@ -3,23 +3,17 @@
 The Forklift Odometry Project aims to develop a ROS (Robot Operating System) package for estimating the odometry of a Jungheinrich ETV216 forklift. This package utilizes CAN bus data, including wheel travel and steering angle, along with the robot's kinematic model to calculate and publish the robot's pose and velocity information.
 
 # Package Content
-- cititruck_description:
-
-a. launch folder: Contains all the RVIZ files.
-b. mesh folder: Includes the 3D models of the forklift and its additional parts in .dae format.
-c. urdf folder: Contains the .xacro files and trials of the ETV216 forklift.
-d. launch: Contains all the .launch files.
-
-- rviz_configs
-
-- scripts:
-
-forklift_odometry.py: The main code for the ROS node.
-forklift_odometry1.py: Includes all the trials that took place to reach the final target.
-
-- CMakeLists.txt
-
-- package.xml
+- `cititruck_description`
+  - `launch` folder: Contains all the RVIZ files.
+  - `mesh` folder: Includes the 3D models of the forklift and its additional parts in .dae format.
+  - `urdf` folder: Contains the .xacro files and trials of the ETV216 forklift.
+- `launch`: Contains all the .launch files.
+- `rviz_configs`
+- `scripts`
+  - `forklift_odometry.py`: The main code for the ROS node.
+  - `forklift_odometry1.py`: Includes all the trials that took place to reach the final target.
+- `CMakeLists.txt`
+- `package.xml`
 
 # Description
 The ForkliftOdometry ROS node is responsible for estimating the odometry of a forklift robot based on CAN bus data and the robot's kinematic model. It subscribes to CAN frame messages and calculates the forklift's pose and velocity information. It also publishes the odometry and path information as ROS messages.
