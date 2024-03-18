@@ -10,17 +10,17 @@ a. launch folder: all the RVIZ files are included in this folder.
 b. mesh folder: all the .dae files that represent the 3D models of the forklift and its additional parts.
 c. urdf folder: all the .xacro files and trials of the ETV216 forklift are included.
 
-2. launch:
+2.launch:
 all the .launch files are presented here
 
 3.rviz_configs
 
-scripts: 
+4.scripts: 
 It has two files one for the main code of the ROS node and the second one includes all the trials that took place to reach the final target.
 
-CMakeLists.txt
+5.CMakeLists.txt
 
-package.xml
+6.package.xml
 
 
 # Description:
