@@ -5,10 +5,10 @@ The Forklift Odometry Project aims to develop a ROS (Robot Operating System) pac
 # Package Content
 - cititruck_description:
 
-launch folder: Contains all the RVIZ files.
-mesh folder: Includes the 3D models of the forklift and its additional parts in .dae format.
-urdf folder: Contains the .xacro files and trials of the ETV216 forklift.
-launch: Contains all the .launch files.
+a. launch folder: Contains all the RVIZ files.
+b. mesh folder: Includes the 3D models of the forklift and its additional parts in .dae format.
+c. urdf folder: Contains the .xacro files and trials of the ETV216 forklift.
+d. launch: Contains all the .launch files.
 
 - rviz_configs
 
