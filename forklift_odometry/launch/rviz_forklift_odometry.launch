@@ -1,0 +1,10 @@
+<launch>
+    <!-- Set the node name -->
+    <node name="forklift_odometry_node" pkg="forklift_odometry" type="Forklift_Kinematics_Odometry.py" output="screen">
+        <!-- Set any required parameters -->
+        <param name="~wheelbase" value="1.46" />
+    </node>
+   <!-- open in Rviz   -->
+   <!--node name="rviz" pkg="rviz" type="rviz" args="" /-->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find forklift_odometry)/launch/rviz_forklift_odometry.rviz" />
+</launch>

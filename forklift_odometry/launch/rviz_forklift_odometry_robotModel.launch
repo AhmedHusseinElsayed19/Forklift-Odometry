@@ -1,0 +1,24 @@
+<!-- https://www.theconstructsim.com/ros-projects-robotic-manipulator-part-1-basic-urdf-rviz/ -->
+
+<launch>
+    <!-- Set the node name -->
+    <node name="forklift_odometry_node" pkg="forklift_odometry" type="Forklift_Kinematics_Odometry.py" output="screen">
+        <!-- Set any required parameters -->
+        <param name="~wheelbase" value="1.46" />
+    </node>
+    
+   <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find forklift_odometry)/cititruck_description/urdf/cititruck_3.xacro'"/>
+   
+   <!-- Combine joint values -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+   
+   <!-- open in Rviz   -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find forklift_odometry)/launch/rviz_forklift_odometry_1.rviz" />
+    
+     <!-- send joint values -->
+     
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    <param name="use_gui" value="true"/>
+  </node>
+
+</launch>
