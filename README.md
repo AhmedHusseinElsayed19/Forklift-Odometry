@@ -10,8 +10,8 @@ The Forklift Odometry Project aims to develop a ROS (Robot Operating System) pac
 - `launch`: Contains all the .launch files.
 - `rviz_configs`
 - `scripts`
-  - `forklift_odometry.py`: The main code for the ROS node.
-  - `forklift_odometry1.py`: Includes all the trials that took place to reach the final target.
+  - `Forklift_Kinematics_Odometry.py`: The main code for the ROS node.
+  - `Forklift_Kinematics_Odometry_1.py`: Includes all the trials that took place to reach the final target.
 - `CMakeLists.txt`
 - `package.xml`
 
