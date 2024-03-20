@@ -43,7 +43,7 @@ The ForkliftOdometry node is implemented as a Python script (forklift_odometry.p
 - Publishing: The publish_odometry and publish_path methods publish the odometry and path messages, respectively.
 
 - Main Execution: The run method is called in the main execution block, which runs the node at a specified rate.
-     ![simplescreenrecorder-2024-03-18_12 51 44-ezgif com-video-to-gif-converter](https://github.com/AhmedHusseinElsayed19/Forklift_Odometry/assets/39027317/0c5ab961-6721-41e4-b615-03fc7fd233f8)
+               ![simplescreenrecorder-2024-03-18_12 51 44-ezgif com-video-to-gif-converter](https://github.com/AhmedHusseinElsayed19/Forklift_Odometry/assets/39027317/0c5ab961-6721-41e4-b615-03fc7fd233f8)
 
 
 
