@@ -1,50 +1,48 @@
-# Forklift_Odometry
-# Overview
-The Forklift Odometry Project aims to develop a ROS (Robot Operating System) package for estimating the odometry of a Jungheinrich ETV216 forklift. This package utilizes CAN bus data, including wheel travel and steering angle, along with the robot's kinematic model to calculate and publish the robot's pose and velocity information.
+# 🚜 Forklift Odometry (ETV216)
 
-# Package Content
-- `cititruck_description`
-  - `launch` folder: Contains all the RVIZ files.
-  - `mesh` folder: Includes the 3D models of the forklift and its additional parts in .dae format.
-  - `urdf` folder: Contains the .xacro files and trials of the ETV216 forklift.
-- `launch`: Contains all the .launch files.
-- `rviz_configs`
-- `scripts`
-  - `Forklift_Kinematics_Odometry.py`: The main code for the ROS node.
-  - `Forklift_Kinematics_Odometry_1.py`: Includes all the trials that took place to reach the final target.
-- `CMakeLists.txt`
+## 📖 Overview
+The **Forklift Odometry Project** develops a ROS package to estimate the odometry of a **Jungheinrich ETV216 forklift** using CAN bus data and the robot’s kinematic model to publish accurate pose and velocity information.
+
+## 📁 Package Content
+
+- `cititruck_description`  
+  - `launch/`: RViz config files  
+  - `mesh/`: 3D models of the forklift (.dae format)  
+  - `urdf/`: Xacro files for the forklift description  
+
+- `launch/`: All ROS launch files  
+- `rviz_configs/`: RViz configurations  
+- `scripts/`:  
+  - `Forklift_Kinematics_Odometry.py`: Final ROS node  
+  - `Forklift_Kinematics_Odometry_1.py`: Development trials  
+
+- `CMakeLists.txt`  
 - `package.xml`
 
-# Description
-The ForkliftOdometry ROS node is responsible for estimating the odometry of a forklift robot based on CAN bus data and the robot's kinematic model. It subscribes to CAN frame messages and calculates the forklift's pose and velocity information. It also publishes the odometry and path information as ROS messages.
+## ⚙️ Node Description
 
-# Functionality and Features
-- Subscribes to CAN frame messages containing wheel travel and steering angle information.
-- Calculates the linear and angular velocities of the forklift based on the wheel travel and steering angle values.
-- Updates the position and orientation of the forklift using kinematic equations.
-- Publishes the odometry information as Odometry messages on the Odom topic.
-- Publishes the path information as Path messages on the path topic.
-- Broadcasts the transform between the Odom frame and the base_link frame.
-- Supports configurable parameters such as the wheelbase of the forklift and the frame ID for which to calculate odometry.
+The `ForkliftOdometry` ROS node:
+- Subscribes to CAN frames for wheel travel and steering angles
+- Calculates linear and angular velocities
+- Updates the forklift’s pose and orientation using kinematic equations
+- Publishes odometry and path info as ROS messages
+- Broadcasts transform between `odom` and `base_link`
 
-# Node Structure
-The ForkliftOdometry node is implemented as a Python script (forklift_odometry.py) and consists of the following main components:
+## 🔧 Features
 
-- Initialization: The node is initialized, and necessary ROS publishers, subscribers, and variables are set up.
+- 📡 CAN-based data input  
+- 🔁 Real-time odometry calculation  
+- 🧭 Path generation using PoseStamped messages  
+- 🔄 Transform broadcasting with TF  
+- ⚙️ Configurable parameters (e.g. wheelbase, frame ID)
 
-- Frame Handling: The handle_frame method is called whenever a frame message is received. It extracts the wheel travel and steering angle values from the frame and calculates the odometry information.
+## 🧩 Node Structure
 
-- Odometry Calculation: The handle_frame method calculates the linear and angular velocities, updates the position and orientation using kinematic equations, and publishes the odometry message.
+- **Initialization**: Publishers/subscribers setup  
+- **Frame Handling**: Parses CAN data and triggers calculations  
+- **Odometry & Path Publishing**: Uses kinematics for motion estimation  
+- **TF Broadcasting**: Keeps coordinate frames aligned  
+- **Main Execution**: Runs the node at a defined frequency  
 
-- Path Generation: The handle_frame method generates a path by creating a PoseStamped message for the current position and adding it to the Path message.
-
-- Transform Broadcasting: The handle_frame method broadcasts the transform between the Odom frame and the base_link frame.
-
-- Publishing: The publish_odometry and publish_path methods publish the odometry and path messages, respectively.
-
-- Main Execution: The run method is called in the main execution block, which runs the node at a specified rate.
-               ![simplescreenrecorder-2024-03-18_12 51 44-ezgif com-video-to-gif-converter](https://github.com/AhmedHusseinElsayed19/Forklift_Odometry/assets/39027317/0c5ab961-6721-41e4-b615-03fc7fd233f8)
-
-
-
-  
+## 🎥 Demo
+![Forklift Odometry Demo](https://github.com/AhmedHusseinElsayed19/Forklift_Odometry/assets/39027317/0c5ab961-6721-41e4-b615-03fc7fd233f8)
